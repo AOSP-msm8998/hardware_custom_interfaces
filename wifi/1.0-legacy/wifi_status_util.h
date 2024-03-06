@@ -17,27 +17,26 @@
 #ifndef WIFI_STATUS_UTIL_H_
 #define WIFI_STATUS_UTIL_H_
 
-#include <android/hardware/wifi/1.0/IWifi.h>
+#include <android/hardware/wifi/1.4/IWifi.h>
 
 #include "wifi_legacy_hal.h"
 
 namespace android {
 namespace hardware {
 namespace wifi {
-namespace V1_3 {
+namespace V1_6 {
 namespace implementation {
 using namespace android::hardware::wifi::V1_0;
 
 std::string legacyErrorToString(legacy_hal::wifi_error error);
-WifiStatus createWifiStatus(WifiStatusCode code,
-                            const std::string& description);
+WifiStatus createWifiStatus(WifiStatusCode code, const std::string& description);
 WifiStatus createWifiStatus(WifiStatusCode code);
 WifiStatus createWifiStatusFromLegacyError(legacy_hal::wifi_error error,
                                            const std::string& description);
 WifiStatus createWifiStatusFromLegacyError(legacy_hal::wifi_error error);
 
 }  // namespace implementation
-}  // namespace V1_3
+}  // namespace V1_6
 }  // namespace wifi
 }  // namespace hardware
 }  // namespace android
